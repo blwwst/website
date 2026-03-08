@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极简导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background: #f5f7fa;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .title {
+            text-align: center;
+            font-size: 28px;
+            font-weight: bold;
+            margin: 30px 0 20px;
+            color: #333;
+        }
+        .search-box {
+            width: 100%;
+            height: 50px;
+            border-radius: 25px;
+            border: none;
+            outline: none;
+            padding: 0 20px;
+            font-size: 16px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .nav-group {
+            margin-bottom: 25px;
+        }
+        .nav-title {
+            font-size: 18px;
+            color: #555;
+            margin-bottom: 12px;
+            padding-left: 5px;
+        }
+        .nav-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 10px;
+        }
+        .nav-item {
+            background: #fff;
+            height: 50px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+            transition: 0.2s;
+        }
+        .nav-item:hover {
+            background: #e8f3ff;
+            color: #0066cc;
+            transform: translateY(-2px);
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="title">极简导航</div>
+
+    <!-- 搜索框（跳百度） -->
+    <input type="text" class="search-box" placeholder="百度一下" id="searchInput" onkeydown="if(event.keyCode==13) search()">
+
+    <!-- 常用网站 -->
+    <div class="nav-group">
+        <div class="nav-title">🔥 常用网站</div>
+        <div class="nav-list">
+            <a href="https://www.baidu.com" class="nav-item">百度</a>
+            <a href="https://www.zhihu.com" class="nav-item">知乎</a>
+            <a href="https://www.bilibili.com" class="nav-item">B站</a>
+            <a href="https://www.baidu.com" class="nav-item">百度</a>
+            <a href="https://www.douyin.com" class="nav-item">抖音</a>
+            <a href="https://www.taobao.com" class="nav-item">淘宝</a>
+            <a href="https://www.jd.com" class="nav-item">京东</a>
+            <a href="https://www.163.com" class="nav-item">网易</a>
+        </div>
+    </div>
+
+    <!-- 技术开发 -->
+    <div class="nav-group">
+        <div class="nav-title">💻 技术开发</div>
+        <div class="nav-list">
+            <a href="https://github.com" class="nav-item">GitHub</a>
+            <a href="https://gitee.com" class="nav-item">Gitee</a>
+            <a href="https://cainiaojiaocheng.com" class="nav-item">菜鸟教程</a>
+            <a href="https://www.csdn.net" class="nav-item">CSDN</a>
+            <a href="https://segmentfault.com" class="nav-item">思否</a>
+            <a href="https://stackoverflow.com" class="nav-item">StackOverflow</a>
+        </div>
+    </div>
+
+    <!-- 工具 -->
+    <div class="nav-group">
+        <div class="nav-title">🛠 实用工具</div>
+        <div class="nav-list">
+            <a href="https://www.aliyundrive.com" class="nav-item">阿里云盘</a>
+            <a href="https://pan.baidu.com" class="nav-item">百度网盘</a>
+            <a href="https://www.qq.com" class="nav-item">QQ邮箱</a>
+            <a href="https://www.126.com" class="nav-item">126邮箱</a>
+            <a href="https://www.ip138.com" class="nav-item">IP查询</a>
+            <a href="https://www.bejson.com" class="nav-item">JSON格式化</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    function search() {
+        let wd = document.getElementById('searchInput').value;
+        if (wd) {
+            window.open('https://www.baidu.com/s?wd=' + encodeURIComponent(wd));
+        }
+    }
+</script>
+
+</body>
+</html>
